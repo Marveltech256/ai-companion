@@ -19,6 +19,7 @@ import 'timezone_field.dart';
 import '../billing/billing_controller.dart';
 import 'membership_dialog.dart';
 import 'review_guest_dialog.dart';
+import 'friend_preferences.dart';
 
 Future<void> exportStory(
   BuildContext context,
@@ -179,6 +180,26 @@ class _SettingsPageState extends State<SettingsPage> {
               const PageHeading(
                 'Your settings.',
                 'A companion that feels a little more like you.',
+              ),
+              _Section(
+                title: 'Your companion',
+                icon: Icons.auto_awesome,
+                children: [
+                  Text(
+                    companion.name,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Shape your friend’s personality, support and way of talking.',
+                  ),
+                  const SizedBox(height: 12),
+                  OutlinedButton.icon(
+                    onPressed: () => editFriendPreferences(context, controller),
+                    icon: const Icon(Icons.tune),
+                    label: const Text('Shape your companion'),
+                  ),
+                ],
               ),
               _Section(
                 title: 'A gentle hello',

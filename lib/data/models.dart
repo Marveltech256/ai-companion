@@ -41,6 +41,39 @@ class PersonalProfile {
   };
 }
 
+class CompanionPreferences {
+  const CompanionPreferences({
+    this.personalities = const [],
+    this.support = const [],
+    this.communication,
+    this.learning = '',
+    this.goals = '',
+    this.additional = '',
+  });
+  final List<String> personalities, support;
+  final String? communication;
+  final String learning, goals, additional;
+  factory CompanionPreferences.fromJson(Map<String, dynamic> json) =>
+      CompanionPreferences(
+        personalities: List<String>.from(
+          json['personality_keys'] as List? ?? [],
+        ),
+        support: List<String>.from(json['support_preferences'] as List? ?? []),
+        communication: json['interaction_style'] as String?,
+        learning: json['learning_interests'] as String? ?? '',
+        goals: json['personal_goals'] as String? ?? '',
+        additional: json['additional_information'] as String? ?? '',
+      );
+  Map<String, dynamic> toInput() => {
+    'personality_keys': personalities,
+    'support_preferences': support,
+    'interaction_style': communication,
+    'learning_interests': learning,
+    'personal_goals': goals,
+    'additional_information': additional,
+  };
+}
+
 class Companion {
   const Companion({
     required this.id,
@@ -53,6 +86,7 @@ class Companion {
     this.learningEnabled = false,
     this.voiceEnabled = false,
     this.conversationRetentionDays,
+    this.preferences = const CompanionPreferences(),
   });
   final String id, name, style;
   final List<String> interests;
@@ -62,6 +96,7 @@ class Companion {
   final bool voiceEnabled;
   final int? retentionDays;
   final int? conversationRetentionDays;
+  final CompanionPreferences preferences;
   factory Companion.fromJson(Map<String, dynamic> json) => Companion(
     id: json['id'] as String,
     name: json['name'] as String,
@@ -73,6 +108,7 @@ class Companion {
     learningEnabled: json['learning_enabled'] == true,
     voiceEnabled: json['voice_enabled'] == true,
     conversationRetentionDays: json['conversation_retention_days'] as int?,
+    preferences: CompanionPreferences.fromJson(json),
   );
   Map<String, dynamic> toInput() => {
     'name': name,
@@ -94,6 +130,7 @@ class Companion {
     bool clearRetention = false,
     int? conversationRetentionDays,
     bool clearConversationRetention = false,
+    CompanionPreferences? preferences,
   }) => Companion(
     id: id,
     name: name ?? this.name,
@@ -107,6 +144,7 @@ class Companion {
     conversationRetentionDays: clearConversationRetention
         ? null
         : conversationRetentionDays ?? this.conversationRetentionDays,
+    preferences: preferences ?? this.preferences,
   );
 }
 

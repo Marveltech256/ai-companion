@@ -22,6 +22,12 @@ where table_schema='public' and table_name='profiles' and column_name in
  ('user_id','username','preferred_name','age_group','language','timezone','timezone_automatic','reply_mode','introduction_completed_at','welcome_completed_at')
 order by ordinal_position;
 
+-- Companion preferences from additive migration 020; existing ownership/RLS is retained.
+select column_name,data_type from information_schema.columns
+where table_schema='public' and table_name='companions' and column_name in
+ ('name','personality_keys','support_preferences','interaction_style','learning_interests','personal_goals','additional_information','preferences_completed_at')
+order by ordinal_position;
+
 -- Must include inactivity_days after migration 015.
 select column_name,data_type from information_schema.columns where table_schema='public'
  and table_name='notification_preferences' and column_name='inactivity_days';

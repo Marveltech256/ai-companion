@@ -186,6 +186,28 @@ class DeviceWorkspaceApi implements CompanionApi {
           };
           return {'companion': state['companion']};
         });
+      case 'save_friend_preferences':
+        return _transaction((state) {
+          final old = state['companion'] as Map?;
+          if (old == null || old['id'] != body['companion_id']) {
+            throw const AppFailure(
+              'not_found',
+              'That companion is not available.',
+            );
+          }
+          final name = (body['name'] as String).trim();
+          if (name.isEmpty ||
+              name.length > 24 ||
+              (body['personality_keys'] as List).length > 2 ||
+              (body['support_preferences'] as List).length > 4) {
+            throw const AppFailure(
+              'invalid_input',
+              'Please check your companion preferences.',
+            );
+          }
+          state['companion'] = {...old, ...body, 'name': name};
+          return {'companion': state['companion']};
+        });
       case 'list_conversations':
         return {'conversations': _rows('conversations').reversed.toList()};
       case 'create_conversation':

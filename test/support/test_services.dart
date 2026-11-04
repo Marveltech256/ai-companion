@@ -83,6 +83,13 @@ class TestApi implements CompanionApi {
       case 'save_personal_profile':
         personalProfile = Map.of(body);
         return {'profile': personalProfile};
+      case 'save_friend_preferences':
+        if (failSettings) {
+          throw const AppFailure('offline', 'Not saved.', retryable: true);
+        }
+        companion = {...companion!, ...body};
+        saved.add(Map.of(body));
+        return {'companion': companion};
       case 'set_voice':
         companion = {...companion!, 'voice_enabled': body['enabled']};
         return {'companion': companion};

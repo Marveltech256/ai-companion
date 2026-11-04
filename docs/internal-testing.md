@@ -1,6 +1,6 @@
 # Ai Companion — Android internal testing
 
-Release: **0.1.3 (version code 4)**, package `com.aipersonalcompanion`.
+Release: **0.1.4 (version code 5)**, package `com.aipersonalcompanion`.
 Start with the **Internal testing track** in Play Console. Preparing these files
 does not upload an app, create testers, send invitations or publish a release.
 A private-code guest entry is available for app review; see review-guest-access.md. There is no switch to production rollout.
@@ -13,7 +13,7 @@ invitation/release hold, not a new IP or nationality filter in the app.
 
 ## Bundle and signing
 
-The candidate is `releases/0.1.3+4/ai-companion-0.1.3-4-internal.aab`.
+The candidate is `releases/0.1.4+5/ai-companion-0.1.4-5-internal.aab`.
 The original version 1 artifact is preserved. The new candidate is verified with
 Google's bundletool, signature/certificate checks and 16 KB native packaging/load
 alignment checks. Physical-device runtime remains unverified. An AAB is uploaded
@@ -47,7 +47,7 @@ See [Flutter signing](https://docs.flutter.dev/deployment/android) and
 Build from this workspace, preserving its existing public service configuration:
 
 ```powershell
-flutter build appbundle --release --build-name=0.1.3 --build-number=4 --dart-define-from-file=config/development.json
+flutter build appbundle --release --build-name=0.1.4 --build-number=5 --dart-define-from-file=config/development.json
 ```
 
 For subsequent Play uploads increment the version code in `pubspec.yaml` or the
@@ -61,8 +61,8 @@ build command. Do not replace `com.aipersonalcompanion` or its Firebase project.
    from the app's self-reported 18+ onboarding alone.
 2. Open **Test and release → Testing → Internal testing → Create new release**.
    Use Play App Signing, upload the signed AAB and inspect Play's validation.
-   Name this release `0.1.3 (4) — Internal test update`.
-3. Paste `releases/0.1.3+4/play-release-notes.txt` into release notes. Its English
+   Name this release `0.1.4 (5) — Internal test update`.
+3. Paste `releases/0.1.4+5/play-release-notes.txt` into release notes. Its English
    body is below Play's 500-character per-language limit. Resolve any Console
    errors before rollout. Leave Production untouched.
 4. Under the internal track's **Testers** tab add the intended tester list or

@@ -1,7 +1,7 @@
 name: ai_companion
 description: "Ai Companion — a personal AI companion."
 publish_to: 'none'
-version: 0.1.3+4
+version: 0.1.4+5
 
 environment:
   sdk: ^3.13.5

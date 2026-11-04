@@ -3,6 +3,7 @@ import type { Database } from "./database.ts";
 import { ApiError, requiredString, uuid } from "./errors.ts";
 import { cors, errorResponse, jsonBody } from "./http.ts";
 import { memoryCategories } from './openai.ts';
+import {friendPreferencesInput} from './friend_preferences.ts';
 
 export interface ApiDependencies {
   db: Database;
@@ -60,6 +61,9 @@ export function createCompanionApi(deps: ApiDependencies) {
       const args: Record<string, unknown> = { p_owner: identity.uid };
       let rpc: string;
       switch (body.action) {
+        case 'save_friend_preferences':
+          rpc='morrow_save_friend_preferences';args.p_companion=uuid(body.companion_id);
+          Object.assign(args,friendPreferencesInput(body));break;
         case 'report_message':
           rpc='morrow_report_message';args.p_request=uuid(body.request_id);args.p_message=uuid(body.message_id);
           args.p_reason=requiredString(body.reason,'report reason',20);

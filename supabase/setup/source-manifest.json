@@ -102,7 +102,11 @@
     {
       "file": "202611040019_review_guests.sql",
       "sha256": "4b59ea4c6998220d2002c5672cb1a94cf2f19dcb9f6ad07d8faf89436b2ee8c6"
+    },
+    {
+      "file": "202611040020_friend_preferences.sql",
+      "sha256": "3bd10d171181fa82da0f11271a82e39fbdfd424857fc0e1371191637d7506efe"
     }
   ],
-  "bundle_sha256": "91e5fed5f4208e326aa31b2008b67bc280e056214e4ed4dcde71d95e700a871e"
+  "bundle_sha256": "847fe6336322a5437e3456c33b9cd8e953d1230bcb10f1de2fbe0f79c9058a92"
 }

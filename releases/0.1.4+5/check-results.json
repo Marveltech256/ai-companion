@@ -1,0 +1,21 @@
+{
+  "checked_date": "2026-11-04",
+  "version": "0.1.4+5",
+  "flutter_analyzer": "clean",
+  "flutter_tests_passed": 95,
+  "flutter_vm_tests_skipped": 1,
+  "backend_tests_passed": 70,
+  "edge_entrypoints_typechecked": 9,
+  "real_synthetic_adult_replies": 6,
+  "synthetic_adult_accounts_erased": 3,
+  "younger_provider_requests": 0,
+  "younger_user_access_enabled": false,
+  "live_rls_tables": 23,
+  "live_application_functions": 111,
+  "unsafe_client_write_functions": 0,
+  "purchases_enabled": false,
+  "web_release_built": true,
+  "pc_web_preview_version_confirmed": "0.1.4+5",
+  "physical_device_runtime_verified": false,
+  "play_release_uploaded_by_this_update": false
+}

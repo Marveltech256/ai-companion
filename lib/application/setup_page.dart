@@ -6,6 +6,7 @@ import 'account_dialog.dart';
 import 'actions.dart';
 import 'personalization.dart';
 import 'timezone_field.dart';
+import 'friend_preferences.dart';
 
 class SetupPage extends StatefulWidget {
   const SetupPage({
@@ -25,7 +26,18 @@ class SetupPage extends StatefulWidget {
 
 class _SetupPageState extends State<SetupPage> {
   final _form = GlobalKey<FormState>();
-  final _name = TextEditingController(text: 'Lumi');
+  final _preferences = FriendPreferencesDraft();
+  TextEditingController get _name => _preferences.name;
+  int _step = 0;
+  final _scroll = ScrollController();
+  void _goToStep(int step) {
+    FocusScope.of(context).unfocus();
+    setState(() => _step = step);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && _scroll.hasClients) _scroll.jumpTo(0);
+    });
+  }
+
   late final TextEditingController _username, _preferredName;
   late final TextEditingController _timezone;
   String? _age;
@@ -68,7 +80,8 @@ class _SetupPageState extends State<SetupPage> {
 
   @override
   void dispose() {
-    _name.dispose();
+    _preferences.dispose();
+    _scroll.dispose();
     _username.dispose();
     _preferredName.dispose();
     _timezone.dispose();
@@ -86,6 +99,7 @@ class _SetupPageState extends State<SetupPage> {
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 540),
                 child: SingleChildScrollView(
+                  controller: _scroll,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 26,
                     vertical: 26,
@@ -100,7 +114,11 @@ class _SetupPageState extends State<SetupPage> {
                         const Center(child: LumiOrb(size: 86)),
                         const SizedBox(height: 32),
                         Text(
-                          'A friend, in your own way.',
+                          _step == 0
+                              ? 'A friend, in your own way.'
+                              : _step == 1
+                              ? 'Your kind of friend.'
+                              : 'Make it feel like you.',
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.headlineMedium,
                         ),
@@ -112,6 +130,24 @@ class _SetupPageState extends State<SetupPage> {
                         ),
                         const SizedBox(height: 28),
                         if (!widget.deviceOnly) ...[
+                          Text(
+                            'Step ${_step + 1} of 3',
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(color: mutedInk),
+                          ),
+                          const SizedBox(height: 8),
+                          LinearProgressIndicator(
+                            value: (_step + 1) / 3,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          const SizedBox(height: 22),
+                        ],
+                        FriendPreferenceFields(
+                          key: ValueKey('friend-step-$_step'),
+                          draft: _preferences,
+                          step: _step,
+                        ),
+                        if (!widget.deviceOnly && _step == 0) ...[
                           DropdownButtonFormField<String>(
                             key: const ValueKey('introduction-age'),
                             initialValue: _age,
@@ -194,12 +230,13 @@ class _SetupPageState extends State<SetupPage> {
                           ),
                           const SizedBox(height: 16),
                         ],
-                        const Panel(
-                          color: lilac,
-                          child: Text(
-                            'Your companion remembers useful details you share and learns from your conversations. By continuing, you agree to this personal companion experience. You can review your saved details and manage your data in Privacy.',
+                        if (widget.deviceOnly || _step == 2)
+                          const Panel(
+                            color: lilac,
+                            child: Text(
+                              'Your companion remembers useful details you share and learns from your conversations. By continuing, you agree to this personal companion experience. You can review your saved details and manage your data in Privacy.',
+                            ),
                           ),
-                        ),
                         const SizedBox(height: 20),
                         if (widget.controller.error != null) ...[
                           Semantics(
@@ -214,8 +251,9 @@ class _SetupPageState extends State<SetupPage> {
                           const SizedBox(height: 12),
                         ],
                         ActionButton(
-                          label:
-                              'Meet ${_name.text.trim().isEmpty ? 'your companion' : _name.text.trim()}',
+                          label: !widget.deviceOnly && _step < 2
+                              ? 'Continue'
+                              : 'Meet ${_name.text.trim().isEmpty ? 'your companion' : _name.text.trim()}',
                           icon: Icons.arrow_forward,
                           onPressed:
                               _saving ||
@@ -224,6 +262,10 @@ class _SetupPageState extends State<SetupPage> {
                               ? null
                               : () async {
                                   if (_form.currentState!.validate()) {
+                                    if (!widget.deviceOnly && _step < 2) {
+                                      _goToStep(_step + 1);
+                                      return;
+                                    }
                                     setState(() => _saving = true);
                                     try {
                                       await perform(
@@ -246,6 +288,9 @@ class _SetupPageState extends State<SetupPage> {
                                             interests: const [],
                                             memoryEnabled: true,
                                             friendMode: !widget.deviceOnly,
+                                            preferences: widget.deviceOnly
+                                                ? null
+                                                : _preferences.value,
                                           );
                                         },
                                       );
@@ -257,6 +302,13 @@ class _SetupPageState extends State<SetupPage> {
                                   }
                                 },
                         ),
+                        if (!widget.deviceOnly && _step > 0)
+                          TextButton(
+                            onPressed: _saving
+                                ? null
+                                : () => _goToStep(_step - 1),
+                            child: const Text('Back'),
+                          ),
                         const SizedBox(height: 12),
                         Text(
                           widget.deviceOnly

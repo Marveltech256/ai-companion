@@ -461,6 +461,13 @@ void main() {
         find.byKey(const ValueKey('introduction-timezone')),
         'Africa/Kampala',
       );
+      for (var step = 0; step < 2; step++) {
+        await tester.ensureVisible(
+          find.widgetWithText(FilledButton, 'Continue'),
+        );
+        await tester.tap(find.widgetWithText(FilledButton, 'Continue'));
+        await tester.pumpAndSettle();
+      }
       await tester.ensureVisible(find.text('Meet Lumi'));
       await tester.tap(find.text('Meet Lumi'));
       await tester.pumpAndSettle();

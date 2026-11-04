@@ -532,6 +532,7 @@ class CompanionController extends ChangeNotifier {
     required List<String> interests,
     required bool memoryEnabled,
     bool friendMode = false,
+    CompanionPreferences? preferences,
   }) async {
     if (!configured || busy) return false;
     if (needsAccountDetails) {
@@ -559,6 +560,14 @@ class CompanionController extends ChangeNotifier {
         'retention_days': null,
       });
       if (!_current(epoch)) return false;
+      if (preferences != null) {
+        result = await _api.call('save_friend_preferences', {
+          'companion_id': (result['companion'] as Map)['id'],
+          'name': name,
+          ...preferences.toInput(),
+        });
+        if (!_current(epoch)) return false;
+      }
       if (friendMode) {
         result = await _api.call('activate_friend_mode', {
           'companion_id': (result['companion'] as Map)['id'],
@@ -589,6 +598,25 @@ class CompanionController extends ChangeNotifier {
     displayName = personalProfile.preferredName ?? personalProfile.displayName;
     await loadNotificationPreferences();
     if (!_current(epoch)) return;
+    _notify();
+  }
+
+  Future<void> saveFriendPreferences(
+    String name,
+    CompanionPreferences preferences,
+  ) async {
+    final current = companion;
+    if (current == null) return;
+    final epoch = _epoch;
+    final result = await _api!.call('save_friend_preferences', {
+      'companion_id': current.id,
+      'name': name,
+      ...preferences.toInput(),
+    });
+    if (!_current(epoch)) return;
+    companion = Companion.fromJson(
+      Map<String, dynamic>.from(result['companion']),
+    );
     _notify();
   }
 

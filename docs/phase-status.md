@@ -1,18 +1,23 @@
 # Delivery status
 
-Current update: [Phases 11–12 implementation and verification](remaining-phases.md).
+Current update: [Personalized onboarding and companion preferences](personalized-onboarding.md).
+The existing introduction now has three short sections, and Settings can update
+the companion name, personality blend, up to four support areas, communication
+style and optional goals. Preferences shape real replies across fresh logins.
+The requested younger-user launch remains pending an eligible provider and
+verified consent/safeguarding; current Gemini-backed access stays 18+.
 Temporary private-code **Guest for app review** is enabled on the welcome screen;
 see [review access and removal](review-guest-access.md). Guest workspaces use the
 same services and remain separate from personal accounts.
-The 0.1.3 (4) Android candidate includes inactive subscription infrastructure, reply
+The 0.1.4 (5) Android candidate includes personalized onboarding, inactive subscription infrastructure, reply
 reporting, account-switch isolation and daily privacy cleanup without redesigning
-the existing application. Live checks confirm 23 RLS tables and 110 functions;
+the existing application. Live checks confirm 23 RLS tables and 111 functions;
 the real Chrome storage probe passes. Store, paid-provider and physical device
 gates remain explicit. The historical account below predates this update.
 
-Current checks: **92 Flutter tests**, **65 backend tests**, all nine Edge entry
+Current checks: **95 Flutter tests**, **70 backend tests**, all nine Edge entry
 points type-check, and the real Chrome persistence/cleanup probe passes. The web
-release and signed Android 0.1.2 (3) bundle are built and verified for internal testing.
+release and signed Android candidate are described in the internal-testing guide.
 Public privacy/terms/deletion pages now identify Marvel tech solutions, Uganda;
 real web email login and account erasure pass. The app's existing privacy section
 links to the published notice. No Play upload has occurred.
