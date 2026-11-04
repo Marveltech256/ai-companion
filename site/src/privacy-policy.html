@@ -1,0 +1,63 @@
+<p><strong>Ai Companion</strong> · Android application ID: <code>com.aipersonalcompanion</code><br>
+Effective and last updated: 4 November 2026</p>
+<p>This Privacy Policy applies to the Ai Companion mobile and web application and its privacy/account-deletion website. The operator responsible for these services is <strong>{{operator_name}}, {{operator_country}}</strong>. For privacy questions or requests, contact <a href="mailto:{{support_email}}">{{support_email}}</a>.</p>
+
+<aside class="notice"><strong>Current testing status.</strong> This release is a controlled internal test for adults aged 18 or older. Purchases, real-time calling and automatic check-in delivery are inactive. The configured Gemini API project currently uses unpaid access. Use fictional names and conversation details until paid AI setup is complete. Under Google's applicable unpaid-service terms, submitted material and generated replies can be used for improving Google's products and may be examined by people. Do not submit personal, sensitive or confidential information during this testing period. See the <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>.</aside>
+
+<nav aria-label="Privacy policy contents"><a href="#information">Information collected</a><a href="#uses">How we use it</a><a href="#sharing">Sharing and providers</a><a href="#retention">Retention</a><a href="#choices">Your controls</a><a href="#contact">Contact</a></nav>
+
+<h2 id="information">1. Information we collect and process</h2>
+<ul>
+  <li><strong>Account and profile information:</strong> Firebase account identifiers, email address and sign-in provider, plus your username, preferred name, adult age band, selected language, time zone and optional general location. Google sign-in can make basic Google profile information available to Firebase. Password authentication is handled by Firebase; plaintext passwords are not stored in the Ai Companion application database.</li>
+  <li><strong>Conversations and personalisation:</strong> messages you send, AI replies, conversation history, saved memories, corrections, preferences, routines, events and details you choose to discuss. The service can derive useful preferences and conversational patterns or tone from this content to personalise the companion. These inferences can be wrong and can be reviewed or corrected.</li>
+  <li><strong>Voice information:</strong> microphone recordings you choose to make, their transcriptions, and text selected for spoken replies. Recording requires microphone permission. Audio is sent through our server to the configured AI service for transcription; text-to-speech sends the text to be spoken. The original recording is held locally for review/replay and cleared when sent, discarded or the account changes. Raw recordings are not saved in the Supabase application tables. AI providers have their own processing and retention rules.</li>
+  <li><strong>Notification and device information:</strong> notification preferences, a generated installation identifier, push registration tokens and reminder/delivery metadata when those features are enabled. The device's time-zone setting can be read automatically; a general location can also be supplied by you. The current app does not request GPS, contacts or camera permissions.</li>
+  <li><strong>Reports and support:</strong> the selected AI reply and optional note when you submit a report, plus information you choose to send to support. Other conversation messages are not automatically included in a reply report.</li>
+  <li><strong>Operational information:</strong> service providers may process IP addresses, browser/device or app information, authentication events, request metadata, errors and security logs while delivering and protecting the service.</li>
+  <li><strong>Subscription information, if enabled later:</strong> Google Play product and subscription status, expiry/renewal information, encrypted purchase tokens and usage records for verification and access management. Purchases are currently inactive. Payment card details are handled by the store and are not collected by this app.</li>
+</ul>
+<p>Conversation content can include sensitive information if you choose to provide it. Do not share passwords, access keys, financial credentials or another person's private information. The current testing restriction above also applies to voice messages and saved memories.</p>
+
+<h2 id="uses">2. Why we use this information</h2>
+<p>We use information to authenticate your account, restore your workspace, produce the responses or transcriptions you request, personalise replies, maintain conversation continuity, save and correct remembered details, and apply your language, time-zone and reply preferences. Personal companion mode includes memory and adaptation; the in-app introduction explains this before you continue.</p>
+<p>We also use relevant records to operate consented notification features, review reported replies, provide support, verify purchases if enabled, enforce service limits, prevent unauthorised access, investigate misuse and carry out access/export/deletion requests. We do not integrate an advertising SDK or sell conversation records.</p>
+
+<h2 id="sharing">3. Who receives information</h2>
+<p>Information is shared as needed with the following types of service providers and authorised parties:</p>
+<ul>
+  <li><strong>Google/Firebase:</strong> account authentication, Google sign-in, hosting of these pages and configured push messaging. Relevant account, authentication, device/token and delivery information is processed for those services. See <a href="https://firebase.google.com/support/privacy">Firebase privacy and security information</a> and <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
+  <li><strong>Supabase:</strong> hosting of application records and the backend API, including profiles, conversations, memories, preferences, reports and operational records. See <a href="https://supabase.com/privacy">Supabase privacy information</a>.</li>
+  <li><strong>AI providers:</strong> the configured provider receives the message/audio/text, selected conversation context, relevant profile preferences and approved memories needed for the requested feature. <strong>Google Gemini is currently configured.</strong> OpenAI integration is available but is not currently activated; if activated, it may receive the same relevant categories for supported AI features. See <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a> and <a href="https://openai.com/policies/privacy-policy/">OpenAI's Privacy Policy</a>. AI-provider retention and improvement practices depend on the service, account configuration and applicable terms; an option such as “store: false” does not establish zero provider retention.</li>
+  <li><strong>App stores, if purchases are enabled:</strong> purchase verification and subscription management use the store's transaction services. The store handles its own payment processing.</li>
+  <li><strong>Authorised operators:</strong> relevant information may be accessed when needed to provide support, review a submitted report, protect security or fulfil your request. Information may also be disclosed where required by law or a valid legal process.</li>
+</ul>
+<p>The operator is based in Uganda. Cloud and AI providers can process information in other countries, which may have different privacy laws. Processing locations and safeguards depend on the providers and their configured services. Contact us for questions about international processing.</p>
+
+<h2 id="security">4. Security and local storage</h2>
+<p>The deployed app communicates with its services over HTTPS. The backend verifies Firebase identities and checks account ownership; database access policies separate users' records. Private service credentials remain on the server. The app and authentication SDKs can keep session information, preferences and temporary feature data on your device or browser to provide the service. Protect access to that device and sign out on shared devices.</p>
+<p>These measures reduce risk, but no storage or transmission system can be guaranteed completely secure. Third-party websites and sign-in/store pages are governed by their own privacy practices.</p>
+
+<h2 id="retention">5. Retention and deletion</h2>
+<ul>
+  <li><strong>Profiles and conversations:</strong> retained while the account is used, until you remove them, delete the account or a configured conversation-retention period expires.</li>
+  <li><strong>Saved memories:</strong> retained until corrected/forgotten, removed with the account or their expiry rules apply. Temporary facts generally expire after seven days; dated events generally expire after the event plus 30 days. Other memories may remain until removed. Forgetting a memory does not delete the original conversation transcript.</li>
+  <li><strong>Reports and billing usage:</strong> generally cleaned after 90 days. Expired/revoked encrypted subscription records are cleaned after their expiry plus 90 days. Account deletion removes the associated live application records sooner.</li>
+  <li><strong>Other operational records:</strong> voice-usage metadata lasts about one day, inactive device registrations up to 90 days, reminder history up to 30 days and consent audit events up to one year while the account remains.</li>
+  <li><strong>Review guests:</strong> private-code review access creates a separate pseudonymous workspace using the same services. These workspaces are queued for deletion when review access ends, their version is revoked or they have no API activity for 30 days.</li>
+</ul>
+<p>Cleanup runs on an operational schedule, and deletion requests can require retries. A minimal account-deletion receipt/tombstone, including the account identifier and processing status, is retained to confirm deletion and prevent erased records from being recreated. Provider-controlled service logs and backups follow the providers' separate arrangements; deleting live application records does not promise immediate removal from every backup or provider system.</p>
+
+<h2 id="choices">6. Your choices and privacy requests</h2>
+<p>In the app's Settings and saved-details controls you can inspect or correct remembered information, forget details, choose conversation retention, export your story and request account deletion. You can choose text replies or available voice features, decline microphone permission when you do not want recording, and control notification permission/preferences. The personal companion experience includes memory and adaptation as explained in its introduction.</p>
+<p>For account deletion outside the app, use the separate <a href="/delete-account.html">Ai Companion account-deletion page</a>. Email/Google account owners sign in with the same account and explicitly confirm deletion. This removes the Firebase account and owned live application records, including conversations, memories, reports and billing/usage records. A status is shown while the request is processed. A store subscription, if one exists, must be cancelled separately in Google Play.</p>
+<p>Review guests can delete their workspace in Settings after confirming guest access. If you have left that session or cannot sign in, contact support with the guest username or other account information needed to identify the request. Do not send your password or private review code. We may need to verify ownership before disclosing, correcting or deleting information.</p>
+<p>Depending on your location and applicable law, you may have additional rights to request access, correction, deletion, a copy of information, or limits on certain processing, and to raise concerns with a relevant privacy authority. Send requests to <a href="mailto:{{support_email}}">{{support_email}}</a>.</p>
+
+<h2 id="children">7. Adults only</h2>
+<p>Ai Companion is intended for people aged 18 or older and is not directed at children. Adult age-range confirmation is part of onboarding. If you believe a child has provided information, contact us so we can investigate and take appropriate action.</p>
+
+<h2 id="changes">8. Changes to this policy</h2>
+<p>We may update this policy when features, providers or data practices change. The latest version and its updated date will be published on this page. Where an additional notice or consent is required, it will be provided through the relevant app experience.</p>
+
+<h2 id="contact">9. Contact the operator</h2>
+<p><strong>{{operator_name}}</strong><br>{{operator_country}}<br>Privacy and support: <a href="mailto:{{support_email}}">{{support_email}}</a></p>
