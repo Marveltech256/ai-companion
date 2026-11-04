@@ -5,6 +5,12 @@ Start with the **Internal testing track** in Play Console. Preparing these files
 does not upload an app, create testers, send invitations or publish a release.
 A private-code guest entry is available for app review; see review-guest-access.md. There is no switch to production rollout.
 
+European AI testing and launch remain pending paid API setup, as confirmed by
+the owner. Internal testing ignores Play country targeting: do not invite EEA,
+UK or Swiss users to AI testing until that setup is verified. See
+[geographic access and the release gate](geo-blocking-readiness.md). This is an
+invitation/release hold, not a new IP or nationality filter in the app.
+
 ## Bundle and signing
 
 The candidate is `releases/0.1.3+4/ai-companion-0.1.3-4-internal.aab`.

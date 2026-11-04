@@ -1,9 +1,12 @@
-param([switch]$BuildArtifacts, [switch]$BrowserStorage)
+param([switch]$BuildArtifacts, [switch]$BrowserStorage, [switch]$EuropeanAiUsers)
 $ErrorActionPreference = 'Stop'
 Set-Location (Split-Path -Parent $PSScriptRoot)
 function Check([scriptblock]$Action) {
   & $Action
   if ($LASTEXITCODE -ne 0) { throw "Release check failed (exit $LASTEXITCODE)." }
+}
+if ($EuropeanAiUsers) {
+  Check { node tools/release_market_gate.mjs --refresh --european-ai-users }
 }
 Check { flutter --suppress-analytics analyze }
 Check { flutter --suppress-analytics test --concurrency=2 }
