@@ -1,0 +1,10 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // No user file upload/storage feature is approved in the current frames.
+    // Audio goes through the verified backend and is not stored in this bucket.
+    match /{path=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Ai Companion — interactive app",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "toolArgs": ["--dart-define-from-file=config/development.json", "--web-port=52100"]
+    },
+    {
+      "name": "Ai Companion — device workspace",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_device.dart"
+    }
+  ]
+}

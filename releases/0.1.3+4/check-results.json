@@ -1,0 +1,211 @@
+{
+  "checked_at_utc": "2026-11-04T07:14:36.187Z",
+  "flutter_tests_passed": 92,
+  "backend_tests_passed": 65,
+  "edge_type_checks": 9,
+  "analyzer": "no issues",
+  "schema": {
+    "functions": 110,
+    "purchases_enabled": false,
+    "review_enabled": true,
+    "review_sessions_remaining": 0,
+    "tables": 23,
+    "unprotected_tables": 0,
+    "unsafe_write_functions": 0
+  },
+  "live_review": {
+    "checked_at_utc": "2026-11-04T07:08:37.177Z",
+    "temporary_review_identities": 2,
+    "ai_requests": 0,
+    "purchases": 0,
+    "seeded_reply": true,
+    "checks": [
+      {
+        "check": "Live review availability is enabled; a wrong code is denied",
+        "passed": true
+      },
+      {
+        "check": "Review code creates separate Firebase custom identities and owned profiles; Firebase refresh preserves the scoped review claims",
+        "passed": true
+      },
+      {
+        "check": "Owned history and normal streaming replay work; another guest cannot read the conversation (seeded reply, no model call)",
+        "passed": true
+      },
+      {
+        "check": "Reconfirming the code preserves the same guest identity and saved history; a forged owner is ignored",
+        "passed": true
+      },
+      {
+        "check": "Revoking one guest blocks its live API access without affecting the other guest",
+        "passed": true
+      },
+      {
+        "check": "Disposable reviewer profile, session registry and Firebase account erased through the normal privacy flow",
+        "passed": true
+      },
+      {
+        "check": "Disposable reviewer profile, session registry and Firebase account erased through the normal privacy flow",
+        "passed": true
+      }
+    ]
+  },
+  "normal_account_regression_passed": true,
+  "initial_unbootstrapped_test_account_erased": true,
+  "private_code_present_in_web_or_site": false,
+  "signed_bundle": {
+    "checked_at_utc": "2026-11-04T07:12:00.268Z",
+    "bundle": "ai-companion-0.1.3-4-internal.aab",
+    "version_name": "0.1.3",
+    "version_code": 4,
+    "application_id": "com.aipersonalcompanion",
+    "minimum_sdk": 24,
+    "target_sdk": 36,
+    "debuggable": false,
+    "bytes": 58819378,
+    "sha256": "7ada992dde030c94045bea2d6f1fd1ff524dc96968f14cf0dd513e3654e9a26c",
+    "bundletool_version": "1.18.3",
+    "bundletool_validation": "passed",
+    "jar_signature": "verified",
+    "upload_certificate_matches": true,
+    "upload_certificate_sha256": "93:F5:16:F7:4C:54:D5:AC:7F:97:94:68:C7:01:21:6E:61:24:70:C1:85:52:DB:30:5E:DB:42:9C:5C:2D:93:D3",
+    "native_packaging_16kb": true,
+    "native_libraries": [
+      {
+        "file": "base/lib/arm64-v8a/libapp.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          65536,
+          65536,
+          65536
+        ]
+      },
+      {
+        "file": "base/lib/arm64-v8a/libdartjni.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "file": "base/lib/arm64-v8a/libdatastore_shared_counter.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          16384,
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "file": "base/lib/arm64-v8a/libflutter.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          65536,
+          65536,
+          65536
+        ]
+      },
+      {
+        "file": "base/lib/armeabi-v7a/libapp.so",
+        "is_64_bit": false,
+        "load_segment_alignment_bytes": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "file": "base/lib/armeabi-v7a/libdartjni.so",
+        "is_64_bit": false,
+        "load_segment_alignment_bytes": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "file": "base/lib/armeabi-v7a/libdatastore_shared_counter.so",
+        "is_64_bit": false,
+        "load_segment_alignment_bytes": [
+          16384,
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "file": "base/lib/armeabi-v7a/libflutter.so",
+        "is_64_bit": false,
+        "load_segment_alignment_bytes": [
+          65536,
+          65536,
+          65536
+        ]
+      },
+      {
+        "file": "base/lib/x86_64/libapp.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          65536,
+          65536,
+          65536
+        ]
+      },
+      {
+        "file": "base/lib/x86_64/libdartjni.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "file": "base/lib/x86_64/libdatastore_shared_counter.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          16384,
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "file": "base/lib/x86_64/libflutter.so",
+        "is_64_bit": true,
+        "load_segment_alignment_bytes": [
+          65536,
+          65536,
+          65536
+        ]
+      }
+    ],
+    "private_signing_files_packaged": false,
+    "private_review_code_checked": true,
+    "private_review_code_embedded": false,
+    "play_console_uploaded": false,
+    "first_play_upload_confirmed": true,
+    "existing_play_upload_key_compatibility": "not_applicable_first_upload",
+    "device_runtime_verified": false
+  },
+  "earlier_bundles_preserved": [
+    {
+      "file": "0.1.0+1/ai-companion-0.1.0-1-internal.aab",
+      "sha256": "18ea2423ee46ed624abd27e8eae9c453c9fa3d8b37c5d178ad213c22bd55f3fe"
+    },
+    {
+      "file": "0.1.1+2/ai-companion-0.1.1-2-internal.aab",
+      "sha256": "aa2d57a84d1778e526467e25ff293c608ff47b019856d288cb4e3b0fe49c32b7"
+    },
+    {
+      "file": "0.1.2+3/ai-companion-0.1.2-3-internal.aab",
+      "sha256": "b37421a362a448b554edc2cb5562afd40ddfbd5dc0c2d862edca5f82eeed26ce"
+    }
+  ],
+  "no_play_upload_performed": true,
+  "physical_android_verified": false,
+  "ios_verified": false
+}

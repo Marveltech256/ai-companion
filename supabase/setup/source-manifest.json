@@ -1,0 +1,108 @@
+{
+  "firebase_project": "ai-personal-companion",
+  "supabase_project": "rvokidwyzwygpzzkpqck",
+  "tables": [
+    "profiles",
+    "companions",
+    "conversations",
+    "turn_requests",
+    "messages",
+    "memories",
+    "memory_tombstones",
+    "memory_jobs",
+    "interaction_patterns",
+    "notification_preferences",
+    "device_tokens",
+    "scheduled_checkins",
+    "voice_usage",
+    "identity_configuration",
+    "account_deletions",
+    "consent_events",
+    "content_reports",
+    "billing_configuration",
+    "billing_accounts",
+    "subscriptions",
+    "billing_usage",
+    "review_configuration",
+    "review_guest_sessions"
+  ],
+  "migrations": [
+    {
+      "file": "202611020001_foundation.sql",
+      "sha256": "f36ae808c08f1108a7bb6fdd8b1660e61cf196a9d93b3047d1911492962f7fae"
+    },
+    {
+      "file": "202611020002_companions.sql",
+      "sha256": "12645442d24fbe84a1030e854bdf7c6667e6f2188dbdcf520214c394f396953e"
+    },
+    {
+      "file": "202611020003_conversations.sql",
+      "sha256": "bf5bc7ac1d903be45a27b0cd2214178f37fb5f2cd732861a5e26ed90b7ef53af"
+    },
+    {
+      "file": "202611020004_memories.sql",
+      "sha256": "89cd110f8448e8af600b16ce1e399d917ba4d54d88c0c19ce079466abf9eb8fd"
+    },
+    {
+      "file": "202611020005_memory_recovery.sql",
+      "sha256": "44d7764c6d7f350469d6d6eae73c34590463e9d254799cb270a3908c0eef2ab7"
+    },
+    {
+      "file": "202611020006_personalization.sql",
+      "sha256": "0e2feff3ca241d98566a764211a418ea07bb84a248fcebe55e5ecfeb5c231833"
+    },
+    {
+      "file": "202611020007_proactivity.sql",
+      "sha256": "45780c48ac3c8aa07f70ac9375deac04c99a74b5a4fe586e43817c71fce5afee"
+    },
+    {
+      "file": "202611020008_voice.sql",
+      "sha256": "ddcf581bdad3da0083a6d491472c7962c8956935446f6a8bb668c0036ae94a30"
+    },
+    {
+      "file": "202611020009_privacy.sql",
+      "sha256": "7978d21aaa5b09796087ccd990fce009ebd17d158e6358469594d6785441202c"
+    },
+    {
+      "file": "202611030010_companion_continuity.sql",
+      "sha256": "c241a8ad242578f97ebb3f44f81dc5d96ee63705b71a734167993035453616e6"
+    },
+    {
+      "file": "202611030011_personal_proactivity.sql",
+      "sha256": "ad90b51ec0fb2f4859c73d4c469fbb9feddfcafcffaa515b2ba2b6987681dfcf"
+    },
+    {
+      "file": "202611030012_account_names.sql",
+      "sha256": "f948a5b382e80f13af48339c8b5ff26c974ed54e8f7032182a46062e8b74c545"
+    },
+    {
+      "file": "202611030013_require_sign_in.sql",
+      "sha256": "4a6a93e1bed205bc0534cc2bb4330f91b3a44192c743c1ba0f2ac2b2302111e0"
+    },
+    {
+      "file": "202611030014_personal_introduction.sql",
+      "sha256": "0e86a050c2e63d4e9c5f69b4327e0e9a7eb871e69540f2621e8b065b6e9400f4"
+    },
+    {
+      "file": "202611030015_inactivity_checkins.sql",
+      "sha256": "2542d9686b0349d2415b7f0101d414d03fd97cac751d85fed2bd1098b9d7919b"
+    },
+    {
+      "file": "202611030016_natural_friend.sql",
+      "sha256": "3d6c7bd70f40de2d7104c020fb3eebe0dd333207c29e9c9123e3a104d78a861e"
+    },
+    {
+      "file": "202611030017_reply_reports.sql",
+      "sha256": "31b7deacb2d98aca0b2829d1f39b83a79a9a08187239b16d909362d9330fba76"
+    },
+    {
+      "file": "202611030018_billing.sql",
+      "sha256": "d543dc8ec34c4cdf7dd93deb4a42f455bb2d00e0f8770cb06db0ca82849a69f6"
+    },
+    {
+      "file": "202611040019_review_guests.sql",
+      "sha256": "4b59ea4c6998220d2002c5672cb1a94cf2f19dcb9f6ad07d8faf89436b2ee8c6"
+    }
+  ],
+  "bundle_sha256": "91e5fed5f4208e326aa31b2008b67bc280e056214e4ed4dcde71d95e700a871e"
+}

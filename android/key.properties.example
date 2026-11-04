@@ -1,0 +1,6 @@
+# Copy to key.properties only if configuring an existing upload key.
+# Keep the actual key.properties and keystore private; never send passwords in chat.
+storeFile=keystores/ai-companion-upload.jks
+storePassword=REPLACE_LOCALLY
+keyPassword=REPLACE_LOCALLY
+keyAlias=upload

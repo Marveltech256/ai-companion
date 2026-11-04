@@ -1,0 +1,133 @@
+{
+  "checked_at_utc": "2026-11-03T15:14:47.173Z",
+  "flutter_tests_passed": 90,
+  "backend_tests_passed": 60,
+  "edge_type_checks": 8,
+  "browser_storage": {
+    "checked_at_utc": "2026-11-03T15:10:03.117Z",
+    "passed": true,
+    "check": "real browser workspace persistence and cleanup",
+    "cloud_requests": 0
+  },
+  "live_safeguards": {
+    "checked_at_utc": "2026-11-03T15:02:11.288Z",
+    "ai_requests": 0,
+    "purchases": 0,
+    "temporary_identities_created": 2,
+    "checks": [
+      {
+        "check": "Live schema: 21 RLS tables, 106 functions; write RPCs restricted, billing off",
+        "passed": true
+      },
+      {
+        "check": "Owned reply report, idempotent retry, foreign-account denial and private export",
+        "passed": true
+      },
+      {
+        "check": "Deployed billing remains free; client premium flags cannot grant access or start purchases",
+        "passed": true
+      },
+      {
+        "check": "Disposable identity erased; no owned profile/report/billing account remains",
+        "passed": true
+      },
+      {
+        "check": "Disposable identity erased; no owned profile/report/billing account remains",
+        "passed": true
+      }
+    ]
+  },
+  "operations": {
+    "checked_at_utc": "2026-11-03T14:57:44.310Z",
+    "maintenance_http_status": 200,
+    "jobs": [
+      {
+        "active": false,
+        "jobname": "ai-companion-checkins",
+        "schedule": "*/5 * * * *"
+      },
+      {
+        "active": true,
+        "jobname": "ai-companion-privacy",
+        "schedule": "15 2 * * *"
+      }
+    ],
+    "billing_feature_enabled": false,
+    "additional_ai_generation_enabled": false,
+    "private_upload_files_removed": true
+  },
+  "preserved_source_files": [
+    "lib/application/theme.dart",
+    "lib/application/home_page.dart",
+    "lib/application/setup_page.dart",
+    "supabase/functions/_shared/openai.ts",
+    "supabase/functions/_shared/gemini.ts",
+    "supabase/functions/_shared/text_ai.ts"
+  ],
+  "original_bundle_sha256": "18ea2423ee46ed624abd27e8eae9c453c9fa3d8b37c5d178ad213c22bd55f3fe",
+  "billing_enabled": false,
+  "paid_ai_setup_complete": false,
+  "public_pages_published": false,
+  "play_uploaded": false,
+  "android_device_verified": false,
+  "ios_verified": false,
+  "final_connections": [
+    {
+      "name": "Supabase Auth health",
+      "status": 200
+    },
+    {
+      "name": "Supabase profiles table (zero-row read)",
+      "status": 401,
+      "code": "42501"
+    },
+    {
+      "name": "Edge Function: companion-api",
+      "status": 401,
+      "code": "unauthenticated"
+    },
+    {
+      "name": "Edge Function: conversation-turn",
+      "status": 401,
+      "code": "unauthenticated"
+    },
+    {
+      "name": "Edge Function: voice",
+      "status": 401,
+      "code": "unauthenticated"
+    },
+    {
+      "name": "Edge Function: privacy",
+      "status": 401,
+      "code": "unauthenticated"
+    },
+    {
+      "name": "Edge Function: checkin-dispatch",
+      "status": 401,
+      "code": "unauthenticated"
+    },
+    {
+      "name": "Edge Function: privacy-maintenance",
+      "status": 401,
+      "code": "unauthenticated"
+    },
+    {
+      "name": "Edge Function: billing",
+      "status": 401,
+      "code": "unauthenticated"
+    },
+    {
+      "name": "Edge Function: billing-notifications",
+      "status": 503,
+      "code": "billing_unavailable"
+    },
+    {
+      "name": "Firebase public project configuration",
+      "status": 200
+    },
+    {
+      "name": "Firebase Google authorization start",
+      "status": 200
+    }
+  ]
+}

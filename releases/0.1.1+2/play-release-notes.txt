@@ -1,0 +1,3 @@
+<en-US>
+Internal test update: the same companion design and text/voice chat, with reply reporting, stronger account-switch privacy and scheduled data cleanup. Subscription preparation is inactive; this test remains free. Use fictional conversation details while paid AI setup is pending. Real-time calling and automatic check-ins are not active. Please test sign-in, chat, voice, memory and account controls.
+</en-US>

@@ -1,0 +1,24 @@
+// Synthetic provider verification before selecting an alternative model.
+import {createRequire} from 'node:module';
+import path from 'node:path';
+import {writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {GeminiProvider} from '../supabase/functions/_shared/gemini.ts';
+const require=createRequire(import.meta.url),cli=path.join(process.env.APPDATA,'npm/node_modules/firebase-tools/lib');
+const {getGlobalDefaultAccount}=require(path.join(cli,'auth.js')),{requireAuth}=require(path.join(cli,'requireAuth.js'));
+const {Client}=require(path.join(cli,'apiv2.js')),{logger}=require(path.join(cli,'logger.js'));
+logger.level='error';for(const t of logger.transports??[])t.level='error';
+const project='ai-personal-companion',account=getGlobalDefaultAccount();
+await requireAuth({project,projectId:project,nonInteractive:true,...(account?{user:account.user,tokens:account.tokens}:{})});
+const api=new Client({urlPrefix:'https://apikeys.googleapis.com',apiVersion:'v2',auth:true});
+const key=(await api.get('/projects/700569985311/locations/global/keys/ai-companion-gemini-server/keyString',{skipLog:{resBody:true}})).body.keyString;
+const model='gemini-3.5-flash-lite',statuses=[];
+const provider=new GeminiProvider(key,model,model,async(url,init)=>{const r=await fetch(url,init);statuses.push(r.status);return r;});
+let reply='';
+for await(const text of provider.reply({companion:{id:'synthetic',name:'Lumi',communication_style:'Gentle & warm',response_length:.5,memory_enabled:true},memories:[],history:[{role:'user',content:'I finished my fictional garden sketch! Answer in one brief sentence.'}]},AbortSignal.timeout(45000)))reply+=text;
+assert.ok(reply.trim());
+const memory=await provider.extract('I enjoy gardening as a hobby.',AbortSignal.timeout(45000));
+assert.ok(JSON.stringify(memory).includes('garden'));
+const report={checked_at_utc:new Date().toISOString(),model,statuses,synthetic_reply:reply,structured_extraction:true,passed:true};
+await writeFile('.cache/friend-alternative-model.json',JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report,null,2));

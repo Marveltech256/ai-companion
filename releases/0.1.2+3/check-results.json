@@ -1,0 +1,74 @@
+{
+  "checked_at_utc": "2026-11-04T06:30:24.403Z",
+  "operator": "Marvel tech solutions",
+  "country": "Uganda",
+  "flutter_tests_passed": 90,
+  "analyzer": "no issues",
+  "backend_last_full_run": {
+    "date": "2026-11-03",
+    "tests_passed": 60,
+    "edge_type_checks": 8
+  },
+  "targeted_privacy_client_test_passed": true,
+  "public_site": {
+    "checked_at_utc": "2026-11-04T06:21:57.726Z",
+    "origin": "https://ai-personal-companion-privacy.web.app",
+    "operator": "Marvel tech solutions",
+    "country": "Uganda",
+    "temporary_identities_created": 1,
+    "temporary_identity_erased": true,
+    "ai_requests": 0,
+    "purchases": 0,
+    "checks": [
+      {
+        "check": "Published HTTPS pages show the supplied operator, support details and security headers",
+        "passed": true
+      },
+      {
+        "check": "Real Chrome loads Firebase modules under the live CSP; mobile deletion form has no horizontal overflow",
+        "passed": true
+      },
+      {
+        "check": "Real Firebase email sign-in works from the new domain; incomplete confirmation cannot enable deletion",
+        "passed": true
+      },
+      {
+        "check": "Outside-app deletion works without onboarding or payment; Firebase identity and application erasure complete",
+        "passed": true
+      },
+      {
+        "check": "New HTTPS origin passes API preflight with explicit origin matching",
+        "passed": true
+      }
+    ]
+  },
+  "free_testing": {
+    "confirmed_by_owner": true,
+    "billing_capability_enabled": false,
+    "catalog_configured": false,
+    "enforcement_enabled": false,
+    "sales_enabled": false
+  },
+  "earlier_bundles_preserved": [
+    {
+      "file": "0.1.0+1/ai-companion-0.1.0-1-internal.aab",
+      "sha256": "18ea2423ee46ed624abd27e8eae9c453c9fa3d8b37c5d178ad213c22bd55f3fe"
+    },
+    {
+      "file": "0.1.1+2/ai-companion-0.1.1-2-internal.aab",
+      "sha256": "aa2d57a84d1778e526467e25ff293c608ff47b019856d288cb4e3b0fe49c32b7"
+    }
+  ],
+  "owner_confirmed_no_play_upload": true,
+  "physical_android_verified": false,
+  "ios_verified": false,
+  "signed_bundle": {
+    "file": "ai-companion-0.1.2-3-internal.aab",
+    "sha256": "b37421a362a448b554edc2cb5562afd40ddfbd5dc0c2d862edca5f82eeed26ce",
+    "bytes": 58764051,
+    "bundletool_validation": "passed",
+    "jar_signature": "verified",
+    "upload_certificate_matches": true,
+    "native_packaging_16kb": true
+  }
+}

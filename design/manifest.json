@@ -1,0 +1,77 @@
+{
+  "fileKey": "ZR1ovxn0yC9WzkPjQYI7ZL",
+  "sourceOriginFileKey": "lk-95cb3237227bf6fb48409a41ccf81023812a3e94dc6a0437eec7aec4e75b69725d0a883a098aee0ff2d3d429cceaded2d059a294190bf7fd4e517932cbe285f6",
+  "sourceSha256": "51b3b513cd97e0028c3a5e9063f22458f83f944895e8c0f55e988f0ccd90e68c",
+  "frames": [
+    {
+      "id": "2:6619",
+      "name": "Meet your companion",
+      "asset": "setup.json",
+      "size": {
+        "x": 402,
+        "y": 900
+      }
+    },
+    {
+      "id": "2:6688",
+      "name": "A little company today",
+      "asset": "home.json",
+      "size": {
+        "x": 402,
+        "y": 900
+      }
+    },
+    {
+      "id": "2:6754",
+      "name": "In conversation with Lumi",
+      "asset": "conversation.json",
+      "size": {
+        "x": 402,
+        "y": 900
+      }
+    },
+    {
+      "id": "2:6816",
+      "name": "A voice, a little closer",
+      "asset": "voice.json",
+      "size": {
+        "x": 402,
+        "y": 900
+      }
+    },
+    {
+      "id": "2:6870",
+      "name": "The little things that stay",
+      "asset": "memories.json",
+      "size": {
+        "x": 402,
+        "y": 900
+      }
+    },
+    {
+      "id": "2:6939",
+      "name": "Morrow — Conversation",
+      "asset": "desktop_conversation.json",
+      "size": {
+        "x": 1440,
+        "y": 1000
+      }
+    },
+    {
+      "id": "2:7076",
+      "name": "Morrow — Memories and personalization",
+      "asset": "desktop_memories.json",
+      "size": {
+        "x": 1440,
+        "y": 1000
+      }
+    }
+  ],
+  "fonts": [
+    "Inter / Semi Bold",
+    "Inter / Regular",
+    "Lora / Regular",
+    "Inter / Medium"
+  ],
+  "geometryCount": 305
+}

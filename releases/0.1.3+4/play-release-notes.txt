@@ -1,0 +1,3 @@
+<en-US>
+Temporary protected guest entry for app review is available on the welcome screen using the private code supplied in App access. Guest workspaces stay separate and use the same companion, chat, memory and recorded-voice features. Existing email/Google sign-in is preserved. Testing remains free; purchases, real-time calling and automatic check-ins remain inactive. Use fictional conversation details during testing.
+</en-US>

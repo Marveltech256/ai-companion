@@ -1,0 +1,42 @@
+project_id = "morrow"
+
+# Firebase ID tokens are verified cryptographically inside these handlers.
+# Supabase's gateway check expects its own JWT; this does NOT make the handlers
+# public. Each rejects missing, expired, wrong-project, or invalid Firebase JWTs.
+[functions.companion-api]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+[functions.conversation-turn]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+[functions.checkin-dispatch]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+[functions.voice]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+[functions.privacy]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+[functions.privacy-maintenance]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+[functions.billing]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+# Google Pub/Sub OIDC is verified inside this route; Firebase tokens are not accepted.
+[functions.billing-notifications]
+verify_jwt = false
+import_map = "./functions/deno.json"
+
+# Private reviewer code exchanges for isolated Firebase custom-token identities.
+[functions.review-access]
+verify_jwt = false
+import_map = "./functions/deno.json"

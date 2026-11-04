@@ -1,0 +1,9 @@
+<en-US>
+First internal test of Ai Companion (18+).
+- Personalised conversations with saved context.
+- Voice messages with replay and transcript review.
+- Choose text or spoken replies.
+- Automatic time zones and smoother chat loading.
+- Account sign-in and personal greetings.
+Testing build: live calling and automatic check-in delivery are not enabled. Please use fictional details until paid AI setup is complete.
+</en-US>

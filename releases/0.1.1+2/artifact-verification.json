@@ -1,0 +1,136 @@
+{
+  "checked_at_utc": "2026-11-03T15:10:09.686Z",
+  "bundle": "ai-companion-0.1.1-2-internal.aab",
+  "version_name": "0.1.1",
+  "version_code": 2,
+  "application_id": "com.aipersonalcompanion",
+  "minimum_sdk": 24,
+  "target_sdk": 36,
+  "debuggable": false,
+  "bytes": 58766166,
+  "sha256": "aa2d57a84d1778e526467e25ff293c608ff47b019856d288cb4e3b0fe49c32b7",
+  "bundletool_version": "1.18.3",
+  "bundletool_validation": "passed",
+  "jar_signature": "verified",
+  "upload_certificate_matches": true,
+  "upload_certificate_sha256": "93:F5:16:F7:4C:54:D5:AC:7F:97:94:68:C7:01:21:6E:61:24:70:C1:85:52:DB:30:5E:DB:42:9C:5C:2D:93:D3",
+  "native_packaging_16kb": true,
+  "native_libraries": [
+    {
+      "file": "base/lib/arm64-v8a/libapp.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        65536,
+        65536,
+        65536
+      ]
+    },
+    {
+      "file": "base/lib/arm64-v8a/libdartjni.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "file": "base/lib/arm64-v8a/libdatastore_shared_counter.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "file": "base/lib/arm64-v8a/libflutter.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        65536,
+        65536,
+        65536
+      ]
+    },
+    {
+      "file": "base/lib/armeabi-v7a/libapp.so",
+      "is_64_bit": false,
+      "load_segment_alignment_bytes": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "file": "base/lib/armeabi-v7a/libdartjni.so",
+      "is_64_bit": false,
+      "load_segment_alignment_bytes": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "file": "base/lib/armeabi-v7a/libdatastore_shared_counter.so",
+      "is_64_bit": false,
+      "load_segment_alignment_bytes": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "file": "base/lib/armeabi-v7a/libflutter.so",
+      "is_64_bit": false,
+      "load_segment_alignment_bytes": [
+        65536,
+        65536,
+        65536
+      ]
+    },
+    {
+      "file": "base/lib/x86_64/libapp.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        65536,
+        65536,
+        65536
+      ]
+    },
+    {
+      "file": "base/lib/x86_64/libdartjni.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "file": "base/lib/x86_64/libdatastore_shared_counter.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "file": "base/lib/x86_64/libflutter.so",
+      "is_64_bit": true,
+      "load_segment_alignment_bytes": [
+        65536,
+        65536,
+        65536
+      ]
+    }
+  ],
+  "private_signing_files_packaged": false,
+  "play_console_uploaded": false,
+  "first_play_upload_confirmed": true,
+  "existing_play_upload_key_compatibility": "not_applicable_first_upload",
+  "device_runtime_verified": false
+}
